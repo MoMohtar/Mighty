@@ -63,8 +63,8 @@ body {
 }
 
 .social-icon {
-    width: 55px;
-    height: 55px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -74,8 +74,8 @@ body {
 }
 
 .social-icon img {
-    width: 26px;
-    height: 26px;
+    width: auto;
+    height: 50px;
 }
 
 .social-icon:hover {
@@ -240,4 +240,5 @@ footer {
     section {
         padding: 40px 8%;
     }
+
 }
