@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    line-height: 1.7;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    animation: fadeDown 1.2s ease;
+}
+.main-cta {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 30px;
+    background: #00e0ff;
+    color: #000;
+    font-weight: bold;
+    border-radius: 40px;
+    text-decoration: none;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(0,224,255,0.7); }
+    70% { box-shadow: 0 0 0 20px rgba(0,224,255,0); }
+    100% { box-shadow: 0 0 0 0 rgba(0,224,255,0); }
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #00e0ff;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+}
+
+.hero p {
+    color: #00e0ff;
+    letter-spacing: 2px;
+}
+/* Floating Social Icons */
+.social-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 999;
+}
+
+.social-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icon img {
+    width: 26px;
+    height: 26px;
+}
+
+.social-icon:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 30px rgba(0,0,0,0.6);
+}
+
+/* WhatsApp */
+.social-icon.whatsapp {
+    background: #25D366;
+}
+
+/* Instagram */
+.social-icon.instagram {
+    background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
+}
+.social-icon::after {
+    content: attr(aria-label);
+    position: absolute;
+    right: 70px;
+    background: black;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.social-icon:hover::after {
+    opacity: 1;
+}
+
+/* SECTIONS */
+section {
+    padding: 60px 15%;
+    animation: fadeUp 1.2s ease;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #00e0ff;
+}
+
+.about p {
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+.about strong {
+    color: #00e0ff;
+}
+
+.about .quote {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 25px;
+    color: #00e0ff;
+}
+
+/* ABOUT */
+.quote {
+    margin-top: 20px;
+    font-style: italic;
+    text-align: center;
+    color: #ccc;
+}
+
+/* CERTIFICATE */
+.certificate img {
+    display: block;
+    margin: auto;
+    max-width: 450px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,224,255,0.6);
+}
+
+/* GALLERY */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.gif-video {
+    width: 100%;
+    border-radius: 12px;
+}
+
+
+.gallery-grid img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px rgba(0,224,255,0.7);
+}
+
+/* TRAINING */
+.training-box {
+    background: rgba(255,255,255,0.08);
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
+
+.training-box:hover {
+    transform: translateY(-6px);
+}
+
+.highlight {
+    border: 2px solid #00e0ff;
+}
+
+.cta {
+    text-align: center;
+    margin-top: 25px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #00e0ff;
+}
+
+/* CONTACT */
+.contact {
+    text-align: center;
+    background: rgba(0,0,0,0.4);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: black;
+    color: #aaa;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    section {
+        padding: 40px 8%;
+    }
+}
