@@ -2,13 +2,19 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
     background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    background-attachment: fixed;
     color: white;
     line-height: 1.7;
+    min-height: 100vh;
 }
 
 /* HERO */
@@ -27,6 +33,16 @@ body {
     border-radius: 40px;
     text-decoration: none;
     animation: pulse 2s infinite;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.main-cta:hover,
+.main-cta:focus {
+    transform: scale(1.05);
+    outline: 2px solid rgba(0,224,255,0.5);
+    outline-offset: 2px;
 }
 
 @keyframes pulse {
@@ -112,7 +128,7 @@ body {
 
 /* SECTIONS */
 section {
-    padding: 60px 15%;
+    padding: 60px clamp(20px, 8vw, 15%);
     animation: fadeUp 1.2s ease;
 }
 
@@ -238,7 +254,36 @@ footer {
 /* MOBILE */
 @media (max-width: 768px) {
     section {
-        padding: 40px 8%;
+        padding: 40px 5%;
     }
 
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .profile-img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .social-float {
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .social-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .social-icon img {
+        height: 35px;
+    }
+}
+
+/* TABLET */
+@media (max-width: 1024px) {
+    .certificate img {
+        max-width: 350px;
+    }
 }
