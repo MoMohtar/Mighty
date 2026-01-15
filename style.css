@@ -80,20 +80,13 @@ body {
 }
 
 .social-icon {
-    width: 65px;
-    height: 65px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.social-icon img {
-   position: absolute;
-   right: 0px;
-    width: auto;
-    height: 50px;
 }
 
 .social-icon:hover {
@@ -104,9 +97,6 @@ body {
 /* WhatsApp */
 .social-icon.whatsapp {
     background: transparent;
-    position: absolute;
-    right: 17px;
-    top: -75px;
 }
 
 /* Instagram */
