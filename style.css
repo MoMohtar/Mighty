@@ -1,9 +1,11 @@
 * {
     margin: 0;
     padding: 0;
-    width: 100%;
     box-sizing: border-box;
     font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+main {
+    width: 100%;
 }
 
 html {
@@ -18,12 +20,34 @@ body {
     min-height: 100vh;
 }
 
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
+    background: rgba(0,0,0,0.5);
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar .active {
+    color: #00e0ff;
+}
+
 /* HERO */
 .hero {
+     max-width: 900px;
+    margin: 0 auto;
     text-align: center;
     padding: 60px 20px;
     animation: fadeDown 1.2s ease;
 }
+
 .main-cta {
     display: inline-block;
     margin-top: 20px;
@@ -80,13 +104,16 @@ body {
 }
 
 .social-icon {
-    width: 55px;
-    height: 55px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.social-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .social-icon:hover {
@@ -97,11 +124,13 @@ body {
 /* WhatsApp */
 .social-icon.whatsapp {
     background: transparent;
+     transform: scale(0.85);
 }
 
 /* Instagram */
 .social-icon.instagram {
     background: transparent;
+     transform: scale(1);
 }
 .social-icon::after {
     content: attr(aria-label);
@@ -123,7 +152,9 @@ body {
 
 /* SECTIONS */
 section {
-    padding: 60px clamp(20px, 8vw, 15%);
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 20px;
     animation: fadeUp 1.2s ease;
 }
 
@@ -159,9 +190,10 @@ h2 {
 
 /* CERTIFICATE */
 .certificate img {
-    display: block;
-    margin: auto;
+     width: 100%;
     max-width: 450px;
+    display: block;
+    margin: 0 auto;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0,224,255,0.6);
 }
@@ -251,10 +283,20 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .social-icon {
-        width: 55px;
-        height: 55px;
-    }
+    .social-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 999;
+}
+
+.social-icon {
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(6px);
+}
 
     .hero h1 {
         font-size: 2rem;
@@ -263,11 +305,6 @@ footer {
     .profile-img {
         width: 100px;
         height: 100px;
-    }
-
-    .social-float {
-        bottom: 10px;
-        right: 10px;
     }
 }
 
